@@ -1,0 +1,20 @@
+//
+//  UIViewController.swift
+//  Show Art
+//
+//  Created by Roman Lantsov on 24.08.2023.
+//
+
+import UIKit
+
+extension UIViewController {
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
+    static func instantiate() -> Self {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(identifier: identifier) as! Self
+    }
+}
